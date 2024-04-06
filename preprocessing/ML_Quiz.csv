@@ -1,0 +1,6 @@
+MCQ,Choices,Correct
+What is the main focus of machine learning?,a: Data visualization | b: Developing statistical algorithms | c: Creating artificial neural networks | d: Building robots,b
+Which field has machine learning NOT been applied to?,a: Natural language processing | b: Agriculture | c: Music production | d: Medicine,c
+What provides the mathematical foundations for machine learning?,a: Data mining | b: Computational statistics | c: Mathematical optimization | d: Artificial intelligence,c
+Which field focuses on exploratory data analysis through unsupervised learning?,a: Machine learning | b: Data mining | c: Artificial intelligence | d: Predictive analytics,b
+What framework provides a theoretical viewpoint for describing machine learning?,a: Artificial intelligence | b: Data mining | c: Probably approximately correct (PAC) learning | d: Computational statistics,c
