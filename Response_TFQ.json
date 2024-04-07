@@ -1,0 +1,26 @@
+{
+    "1": {
+        "tfq": "true false question",
+        "options": {
+            "a": "True",
+            "b": "False"
+        },
+        "correct": "correct answer"
+    },
+    "2": {
+        "tfq": "true false question",
+        "options": {
+            "a": "True",
+            "b": "False"
+        },
+        "correct": "correct answer"
+    },
+    "3": {
+        "tfq": "true false question",
+        "options": {
+            "a": "True",
+            "b": "False"
+        },
+        "correct": "correct answer"
+    }
+}
