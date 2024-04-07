@@ -8,20 +8,18 @@ def read_file(file):
     if file.name.endswith(".pdf"):
         try:
             pdf_reader = PyPDF2.PdfFileReader(file)
-            text_mcq = ""
-            text_tfq = ""
+            text = ""
             for page in pdf_reader.pages:
-                text_mcq += page.extract_text()
-                text_tfq += page.extract_text()
+                text += page.extract_text()
                 
-            logging.info("Texts Loaded via PDF")
-            return text_mcq,text_tfq
+            logging.info("Text Loaded via PDF")
+            return text
         except:
             raise Exception("Error while reading the PDF file.")
         
     
     elif file.name.endswith(".txt"):
-        logging.info("Texts Loaded via Text File")
+        logging.info("Text Loaded via Text File")
         return file.read().decode("utf-8")
     
     else:
@@ -32,6 +30,8 @@ def get_table_data(quiz_mcq_str,quiz_tfq_str):
     try:
         quiz_mcq = json.loads(quiz_mcq_str)
         quiz_tfq = json.loads(quiz_tfq_str)
+        
+        logging.info("Quizzes loaded as JSONs")
         
         quiz_mcq_table_data = []
         for key, value in quiz_mcq.items():
@@ -45,6 +45,9 @@ def get_table_data(quiz_mcq_str,quiz_tfq_str):
             correct = value["correct"]
             quiz_mcq_table_data.append({"MCQ": mcq, "Choices": options, "Correct": correct})
             
+        if quiz_mcq_table_data is not None:
+            logging.info("MCQ Quiz table loaded")
+            
         quiz_tfq_table_data = []
         for key, value in quiz_tfq.items():
             tfq = value["tfq"]
@@ -57,11 +60,14 @@ def get_table_data(quiz_mcq_str,quiz_tfq_str):
             correct = value["correct"]
             quiz_tfq_table_data.append({"TFQ": tfq, "Choices": options, "Correct": correct})
             
+        if quiz_tfq_table_data is not None:
+            logging.info("TFQ Quiz table loaded")
+            
         logging.info("Quizes stored")
-        return quiz_mcq_table_data,quiz_tfq_table_data
+        return [quiz_mcq_table_data,quiz_tfq_table_data]
     except Exception as e:
         traceback.print_exception(type(e),e,e.__traceback__)
-        return False
+        return []
     
 logging.info("----------------------------------")
         

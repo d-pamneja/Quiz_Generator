@@ -26,11 +26,11 @@ Text: {text}
 You are an expert MCQ maker. Given the above text, it is your job to \
 create a quiz of {number_mcq} multiple choice questions for {subject} students in {tone} tone.
 Make sure the questions are not repeated and check all the questions to be conforming the text as well.
-Make sure to format your response likeRESPONSE_JSON below and use it as a guide. \
-Ensure to make {number_mcq} MCQs
+Make sure to format your response like RESPONSE_MCQ_JSON below and use it as a guide. Make sure to just give the json as it is in 
+the below given format\
+Ensure to make {number_mcq} MCQs 
 
-### RESPONSE_JSON
-{response__MCQ_json}
+{response_MCQ_json}
 """
 
 template_tfq = """
@@ -38,10 +38,10 @@ Text: {text}
 You are an expert True False Question maker. Given the above text, it is your job to \
 create a quiz of {number_tfq} True/False questions for {subject} students in {tone} tone.
 Make sure the questions are not repeated and check all the questions to be conforming the text as well.
-Make sure to format your response likeRESPONSE_JSON below and use it as a guide. \
+Make sure to format your response like RESPONSE_TFQ_JSON below and use it as a guide. Make sure to just give the json as it is in 
+the below given format\
 Ensure to make {number_tfq} TFQs
 
-### RESPONSE_JSON
 {response_TFQ_json}
 """
 
@@ -59,8 +59,8 @@ logging.info("Templates and Prompts Initialised")
 
 # Initialising the LLM Chain(s) to connect client and prompt
 
-quiz_gen_MCQ_chain = LLMChain(llm=llm, prompts = quiz_gen_MCQ_prompt, output_key = "quiz_MCQ", verbose = True)
-quiz_gen_TFQ_chain = LLMChain(llm=llm, prompts = quiz_gen_TFQ_prompt, output_key = "quiz_TFQ", verbose = True)
+quiz_gen_MCQ_chain = LLMChain(llm=llm, prompt = quiz_gen_MCQ_prompt, output_key = "quiz_MCQ", verbose = True)
+quiz_gen_TFQ_chain = LLMChain(llm=llm, prompt = quiz_gen_TFQ_prompt, output_key = "quiz_TFQ", verbose = True)
 
 logging.info("Chains Initialised")
 
@@ -95,7 +95,7 @@ logging.info("Output Prompts Initialised")
 quizEval_MCQ_prompt_template = PromptTemplate(input_variables=["subject","quiz_MCQ"],template=output_template_mcq)
 review_MCQ_chain = LLMChain(llm=llm,prompt=quizEval_MCQ_prompt_template,output_key="review_MCQ",verbose=True)
 
-quizEval_TFQ_prompt_template = PromptTemplate(input_variables=["subject","quiz"],template=output_template_tfq)
+quizEval_TFQ_prompt_template = PromptTemplate(input_variables=["subject","quiz_TFQ"],template=output_template_tfq)
 review_TFQ_chain = LLMChain(llm=llm,prompt=quizEval_TFQ_prompt_template,output_key="review_TFQ",verbose=True)
 
 logging.info("Review Prompts and Chains Initialised")
@@ -104,14 +104,14 @@ logging.info("Review Prompts and Chains Initialised")
 
 evaluation_chain_MCQ = SequentialChain(
     chains=[quiz_gen_MCQ_chain,review_MCQ_chain],
-    input_variables=["text","number","subject","tone","response_MCQ_json"],
+    input_variables=["text","number_mcq","subject","tone","response_MCQ_json"],
     output_variables=["quiz_MCQ","review_MCQ"],
     verbose=True
 )
 
 evaluation_chain_TFQ = SequentialChain(
     chains=[quiz_gen_TFQ_chain,review_TFQ_chain],
-    input_variables=["text","number","subject","tone","response_TFQ_json"],
+    input_variables=["text","number_tfq","subject","tone","response_TFQ_json"],
     output_variables=["quiz_TFQ","review_TFQ"],
     verbose=True
 )
