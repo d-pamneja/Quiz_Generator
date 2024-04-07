@@ -21,7 +21,7 @@ with open('./Response_TFQ.json') as file:
     
     
 # Title 
-st.title("Quiz Generator Application using Langchain")
+st.title("Quiz Generator Application using Langchain ⛓️")
 
 # User Input
 with st.form("user_inputs"):
