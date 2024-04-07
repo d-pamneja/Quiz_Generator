@@ -1,0 +1,7 @@
+1. Quadratic Formula: ( ax^2 + bx + c = 0 )
+2. Pythagorean Theorem: ( a^2 + b^2 = c^2 )
+3. Area of a Circle: ( A = pi r^2 )
+4. Area of a Triangle: ( A = \frac{{1}}{{2}}b*h )
+5. Volume of a Sphere: ( V = frac{{4}}{{3}}pi r^3 )
+6. Perimeter of a Rectangle: ( P = 2l + 2w )
+7. Equation of a Line (Point-Slope Form): ( y - y_1 = m(x - x_1) )
