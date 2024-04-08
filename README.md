@@ -91,25 +91,28 @@ The application is deployed via AWS EC2 instance. That can be achieved by follow
     ```
     sudo apt-get update
     ```
-    </sh>
-    <sh>
+
     ```
     sudo apt upgrade -y
     ```
-    </sh>
+
     ```
     sudo apt install python3-pip git curl unzip tar make sudo vim get -y
     ```
-    ```
+
+    ``` 
     git clone "Your-repository"
     ```
+
     ```
     cd "Your-repository"
     ```
+
     ```
     pip3 install -r requirements.txt
     ```
     </sh>
+
 
 4. **Initialize the OPENAI API Key**:
     - Set up the OpenAI API key on the EC2 instance.
