@@ -87,8 +87,9 @@ The application is deployed via AWS EC2 instance. That can be achieved by follow
     - Install the necessary packages and dependencies on the EC2 instance.
     - Ensure that Python, Streamlit, and other required libraries are installed.
     - It can be done using the following commands:
+    <br>
     <sh>
-    
+
     ```
     sudo apt-get update
     ```
@@ -119,7 +120,9 @@ The application is deployed via AWS EC2 instance. That can be achieved by follow
     - Set up the OpenAI API key on the EC2 instance.
     - Create a `.env` file in the project directory and add the OpenAI API key.
     - The `.env` file should contain the following line:
+    <br>
     <sh>
+
     ```
     OPENAI_API_KEY=your_openai_api_key
     ```
@@ -128,7 +131,9 @@ The application is deployed via AWS EC2 instance. That can be achieved by follow
 5. **Run the Streamlit Application**:
     - Run the Streamlit application on the EC2 instance.
     - Use the following command to start the Streamlit server:
+    <br>
     <sh>
+
     ```
     python3 -m streamlit run StreamlitAPP.py
     ```
@@ -139,9 +144,11 @@ The application is deployed via AWS EC2 instance. That can be achieved by follow
     - Access the Streamlit application by visiting the public IP address of the EC2 instance followed by port 8501.
     - The application should be accessible via a web browser.
     - The URL format is as follows:
+
     <sh>
+    
     ```
-    http://<EC2-Public-IP>:8501
+    http://"Your-EC2-Public-IP":8501
     ```
     </sh>
 
