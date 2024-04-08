@@ -90,10 +90,20 @@ The application is deployed via AWS EC2 instance. That can be achieved by follow
     <sh>
     ```
     sudo apt-get update
+    ```
+    ```
     sudo apt upgrade -y
+    ```
+    ```
     sudo apt install python3-pip git curl unzip tar make sudo vim get -y
+    ```
+    ```
     git clone "Your-repository"
+    ```
+    ```
     cd "Your-repository"
+    ```
+    ```
     pip3 install -r requirements.txt
     ```
     </sh>
