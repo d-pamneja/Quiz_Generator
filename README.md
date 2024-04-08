@@ -91,9 +91,12 @@ The application is deployed via AWS EC2 instance. That can be achieved by follow
     ```
     sudo apt-get update
     ```
+    </sh>
+    <sh>
     ```
     sudo apt upgrade -y
     ```
+    </sh>
     ```
     sudo apt install python3-pip git curl unzip tar make sudo vim get -y
     ```
