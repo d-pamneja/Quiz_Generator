@@ -174,9 +174,9 @@ Project Link: [https://github.com/d-pamneja/Quiz_Generator](https://github.com/d
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/d-pamneja/d-pamneja/Quiz_Generator.svg?style=for-the-badge
-[contributors-url]: https://github.com/d-pamneja/d-pamneja/Quiz_Generator/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/d-pamneja/d-pamneja/Quiz_Generator.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/d-pamneja/Quiz_Generator.svg?style=for-the-badge
+[contributors-url]: https://github.com/d-pamneja/Quiz_Generator/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/d-pamneja/Quiz_Generator.svg?style=for-the-badge
 [forks-url]: https://github.com/d-pamneja/d-pamneja/Quiz_Generator/network/members
 [stars-shield]: https://img.shields.io/github/stars/d-pamneja/Quiz_Generator.svg?style=for-the-badge
 [stars-url]: https://github.com/d-pamneja/Quiz_Generator/stargazers
