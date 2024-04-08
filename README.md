@@ -88,6 +88,7 @@ The application is deployed via AWS EC2 instance. That can be achieved by follow
     - Ensure that Python, Streamlit, and other required libraries are installed.
     - It can be done using the following commands:
     <sh>
+    
     ```
     sudo apt-get update
     ```
