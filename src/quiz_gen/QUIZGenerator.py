@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 from src.quiz_gen.utils import read_file, get_table_data
 from src.quiz_gen.logger import logging
 
-from langchain.chat_models import ChatOpenAI
+from langchain_community.chat_models import ChatOpenAI
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
 from langchain.chains import SequentialChain

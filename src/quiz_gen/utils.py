@@ -7,7 +7,7 @@ from src.quiz_gen.logger import logging
 def read_file(file):
     if file.name.endswith(".pdf"):
         try:
-            pdf_reader = PyPDF2.PdfFileReader(file)
+            pdf_reader = PyPDF2.PdfReader(file)
             text = ""
             for page in pdf_reader.pages:
                 text += page.extract_text()
